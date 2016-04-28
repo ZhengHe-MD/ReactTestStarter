@@ -1,6 +1,6 @@
 import React from 'react';
 import expect from 'expect';
-import { shallow } from 'enzyme';
+import { shallow, render } from 'enzyme';
 import sinon from 'sinon';
 
 import {
@@ -107,7 +107,13 @@ describe('enzymeAPI: shallow', () => {
 describe('enzymeAPI: render', () => {
 
   it('returns a CheerioWrapper of current node', () => {
-    const CheerioWrapper = wrapper.find('h1').render();
+    const CheerioWrapper = render(
+      <Office
+        name="MadaData"
+        deskNum={6}
+        id="mada"
+      />
+    );
     expect(CheerioWrapper.find('.MadaData').length).toEqual(1);
   });
 });

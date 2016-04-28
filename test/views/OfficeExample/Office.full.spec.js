@@ -1,10 +1,6 @@
 import React from 'react';
 import expect from 'expect';
 import { mount } from 'enzyme';
-import jsdom from 'jsdom';
-const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
-global.document = doc;
-global.window = doc.defaultView;
 
 import {
   Office,
